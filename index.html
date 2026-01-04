@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impostor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient"></div>
+    <div class="wrap">
+      <header class="hero">
+        <div class="badge">Pass the phone</div>
+        <h1>IMPOSTOR</h1>
+        <p>
+          Choose a category and player count. One player is the impostor.
+        </p>
+      </header>
+
+      <main class="panel">
+        <section class="screen" data-screen="setup">
+          <h2>Setup</h2>
+          <form class="setup-form">
+            <div class="field">
+              <label for="category">Category</label>
+              <select id="category" name="category">
+                <option value="Random">Random</option>
+                <option value="Food">Food</option>
+                <option value="Objects">Objects</option>
+                <option value="Places">Places</option>
+                <option value="Animals">Animals</option>
+                <option value="Jobs">Jobs</option>
+                <option value="Activities">Activities</option>
+                <option value="Celebrities">Celebrities</option>
+                <option value="2025 Memes">2025 Memes</option>
+                <option value="2016 Culture">2016 Culture</option>
+                <option value="Dark History & Scandals">Dark History & Scandals</option>
+                <option value="Fortnite">Fortnite</option>
+                <option value="NSFW Freaky">NSFW Freaky</option>
+                <option value="Sports">Sports</option>
+                <option value="NBA Players">NBA Players</option>
+                <option value="Football Players">Football Players</option>
+                <option value="Clash Royale">Clash Royale</option>
+                <option value="Slurs">Slurs</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="players">Players</label>
+              <div class="players">
+                <input id="players" name="players" type="number" min="3" max="12" value="5" />
+                <span class="hint">3 to 12 players</span>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button type="button" class="primary" id="playBtn">Start</button>
+              <div class="hint" id="formError" aria-live="polite"></div>
+            </div>
+          </form>
+        </section>
+
+        <section class="screen" data-screen="reveal" hidden>
+          <div class="game-head">
+            <h2>Pass the phone</h2>
+            <p>Press a player box to reveal. Tap again to hide and mark it seen.</p>
+          </div>
+
+          <div class="status">
+            <div class="pill" id="revealCount" aria-live="polite">0/0 seen</div>
+            <button type="button" class="ghost" id="resetBtn">New game</button>
+          </div>
+
+          <div class="grid" id="cardGrid" aria-live="polite"></div>
+
+        </section>
+      </main>
+
+      <footer class="foot">Made for quick, chaotic living room rounds.</footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
